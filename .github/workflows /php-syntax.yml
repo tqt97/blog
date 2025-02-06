@@ -1,0 +1,38 @@
+name: Check PHP Syntax
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    tags-ignore:
+      - '**'
+
+jobs:
+  check-php-syntax:
+    name: Check PHP Syntax
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          # This is the minimum PHP version supported by your project
+          php-version: '8.2'
+          extensions: opcache
+          coverage: none
+          tools: none
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Check syntax
+        uses: mlocati/check-php-syntax@v1.2.0
+        with:
+          directory: .
+          include: |
+            bin/entrypoint1
+            bin/entrypoint2
+          exclude: |
+            tests/shim1
+            tests/shim2
+          fail-on-warnings: true
