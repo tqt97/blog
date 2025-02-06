@@ -3,48 +3,48 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
-use Rector\Set\ValueObject\SetList;
-use RectorLaravel\Set\LaravelSetList;
 use Rector\Set\ValueObject\LevelSetList;
-use RectorLaravel\Set\LaravelLevelSetList;
-use RectorLaravel\Rector\If_\AbortIfRector;
-use RectorLaravel\Rector\MethodCall\WhereToWhereLikeRector;
-use RectorLaravel\Rector\FuncCall\TypeHintTappableCallRector;
-use RectorLaravel\Rector\StaticCall\RouteActionCallableRector;
-use RectorLaravel\Rector\Class_\UnifyModelDatesWithCastsRector;
-use RectorLaravel\Rector\FuncCall\RemoveDumpDataDeadCodeRector;
-use RectorLaravel\Rector\ClassMethod\AddArgumentDefaultValueRector;
-use RectorLaravel\Rector\MethodCall\RedirectBackToBackHelperRector;
-use RectorLaravel\Rector\FuncCall\HelperFuncCallToFacadeClassRector;
-use RectorLaravel\Rector\StaticCall\DispatchToHelperFunctionsRector;
-use RectorLaravel\Rector\FuncCall\ArgumentFuncCallToMethodCallRector;
-use RectorLaravel\Rector\MethodCall\JsonCallToExplicitJsonCallRector;
+use Rector\Set\ValueObject\SetList;
 use RectorLaravel\Rector\Class_\ModelCastsPropertyToCastsMethodRector;
-use RectorLaravel\Rector\MethodCall\RedirectRouteToToRouteHelperRector;
-use RectorLaravel\Rector\Expr\AppEnvironmentComparisonToParameterRector;
-use RectorLaravel\Rector\PropertyFetch\OptionalToNullsafeOperatorRector;
-use RectorLaravel\Rector\StaticCall\RequestStaticValidateToInjectRector;
-use RectorLaravel\Rector\MethodCall\ReverseConditionableMethodCallRector;
+use RectorLaravel\Rector\Class_\UnifyModelDatesWithCastsRector;
+use RectorLaravel\Rector\ClassMethod\AddArgumentDefaultValueRector;
 use RectorLaravel\Rector\Coalesce\ApplyDefaultInsteadOfNullCoalesceRector;
-use RectorLaravel\Rector\MethodCall\EloquentOrderByToLatestOrOldestRector;
-use RectorLaravel\Rector\MethodCall\ResponseHelperCallToJsonResponseRector;
-use RectorLaravel\Rector\PropertyFetch\ReplaceFakerInstanceWithHelperRector;
-use RectorLaravel\Rector\MethodCall\AvoidNegatedCollectionFilterOrRejectRector;
-use RectorLaravel\Rector\MethodCall\EloquentWhereTypeHintClosureParameterRector;
-use RectorLaravel\Rector\MethodCall\ValidationRuleArrayStringValueToArrayRector;
-use RectorLaravel\Rector\FuncCall\NowFuncWithStartOfDayMethodCallToTodayFuncRector;
-use RectorLaravel\Rector\MethodCall\EloquentWhereRelationTypeHintingParameterRector;
+use RectorLaravel\Rector\Expr\AppEnvironmentComparisonToParameterRector;
 use RectorLaravel\Rector\Expr\SubStrToStartsWithOrEndsWithStaticMethodCallRector\SubStrToStartsWithOrEndsWithStaticMethodCallRector;
+use RectorLaravel\Rector\FuncCall\ArgumentFuncCallToMethodCallRector;
+use RectorLaravel\Rector\FuncCall\HelperFuncCallToFacadeClassRector;
+use RectorLaravel\Rector\FuncCall\NowFuncWithStartOfDayMethodCallToTodayFuncRector;
+use RectorLaravel\Rector\FuncCall\RemoveDumpDataDeadCodeRector;
+use RectorLaravel\Rector\FuncCall\TypeHintTappableCallRector;
+use RectorLaravel\Rector\If_\AbortIfRector;
+use RectorLaravel\Rector\MethodCall\AvoidNegatedCollectionFilterOrRejectRector;
+use RectorLaravel\Rector\MethodCall\EloquentOrderByToLatestOrOldestRector;
+use RectorLaravel\Rector\MethodCall\EloquentWhereRelationTypeHintingParameterRector;
+use RectorLaravel\Rector\MethodCall\EloquentWhereTypeHintClosureParameterRector;
+use RectorLaravel\Rector\MethodCall\JsonCallToExplicitJsonCallRector;
+use RectorLaravel\Rector\MethodCall\RedirectBackToBackHelperRector;
+use RectorLaravel\Rector\MethodCall\RedirectRouteToToRouteHelperRector;
+use RectorLaravel\Rector\MethodCall\ResponseHelperCallToJsonResponseRector;
+use RectorLaravel\Rector\MethodCall\ReverseConditionableMethodCallRector;
+use RectorLaravel\Rector\MethodCall\ValidationRuleArrayStringValueToArrayRector;
+use RectorLaravel\Rector\MethodCall\WhereToWhereLikeRector;
+use RectorLaravel\Rector\PropertyFetch\OptionalToNullsafeOperatorRector;
+use RectorLaravel\Rector\PropertyFetch\ReplaceFakerInstanceWithHelperRector;
+use RectorLaravel\Rector\StaticCall\DispatchToHelperFunctionsRector;
+use RectorLaravel\Rector\StaticCall\RequestStaticValidateToInjectRector;
+use RectorLaravel\Rector\StaticCall\RouteActionCallableRector;
+use RectorLaravel\Set\LaravelLevelSetList;
+use RectorLaravel\Set\LaravelSetList;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths([
-        __DIR__ . '/app',
-        __DIR__ . '/config',
-        __DIR__ . '/database',
-        __DIR__ . '/public',
-        __DIR__ . '/resources',
-        __DIR__ . '/routes',
-        __DIR__ . '/tests',
+        __DIR__.'/app',
+        __DIR__.'/config',
+        __DIR__.'/database',
+        __DIR__.'/public',
+        __DIR__.'/resources',
+        __DIR__.'/routes',
+        __DIR__.'/tests',
     ]);
     $rectorConfig->sets([
         SetList::DEAD_CODE,
@@ -60,7 +60,7 @@ return static function (RectorConfig $rectorConfig): void {
         LaravelSetList::LARAVEL_IF_HELPERS,
         LaravelSetList::LARAVEL_FACADE_ALIASES_TO_FULL_NAMES,
         LaravelSetList::LARAVEL_ELOQUENT_MAGIC_METHOD_TO_QUERY_BUILDER,
-        LaravelSetList::LARAVEL_CONTAINER_STRING_TO_FULLY_QUALIFIED_NAME
+        LaravelSetList::LARAVEL_CONTAINER_STRING_TO_FULLY_QUALIFIED_NAME,
     ]);
 
     $rectorConfig->rule(EloquentOrderByToLatestOrOldestRector::class);
