@@ -44,7 +44,7 @@
         </svg>
     </a>
     <a class="inline-flex items-center justify-center rounded-full border border-gray-100 text-white p-1 text-xs font-semibold uppercase tracking-widest shadow-sm transition duration-150 ease-in-out hover:shadow-md hover:text-gray-900 focus:outline-none focus:ring-none focus:ring-offset-2 disabled:opacity-25"
-        href="{{ route('socialite.auth', ['provider' => 'github']) }}">
+        href="{{ route('socialite.auth', ['provider' => 'facebook']) }}">
         <svg class="w-8 text-blue-700" fill="currentColor" role="img" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <title>Facebook</title>
