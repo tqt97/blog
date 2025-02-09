@@ -1,7 +1,7 @@
-<div class="mt-4 flex items-center gap-1 align-center">
-    <a class="inline-flex items-center justify-center rounded-full border border-gray-100 text-white p-1 text-xs font-semibold uppercase tracking-widest shadow-sm transition duration-150 ease-in-out hover:shadow-md hover:text-gray-900 focus:outline-none focus:ring-none focus:ring-offset-2 disabled:opacity-25"
+<div class="flex items-center gap-2 align-center">
+    <a class="inline-flex items-center justify-center rounded-md border border-gray-200 text-white p-1 text-xs font-semibold uppercase tracking-widest shadow-sm transition duration-150 ease-in-out hover:shadow-md hover:text-gray-900 focus:outline-none focus:ring-none focus:ring-offset-2 disabled:opacity-25"
         href="{{ route('socialite.auth', ['provider' => 'github']) }}">
-        <svg class="w-8 rounded-full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        <svg class="w-6 rounded-full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 73 73" version="1.1">
             <g id="team-collaboration/version-control/github" stroke="none" stroke-width="1" fill="none"
                 fill-rule="evenodd">
@@ -19,9 +19,9 @@
             </g>
         </svg>
     </a>
-    <a class="inline-flex items-center justify-center rounded-full border border-gray-100 text-white p-1 text-xs font-semibold uppercase tracking-widest shadow-sm transition duration-150 ease-in-out hover:shadow-md hover:text-gray-900 focus:outline-none focus:ring-none focus:ring-offset-2 disabled:opacity-25"
+    <a class="inline-flex items-center justify-center rounded-md border border-gray-200 text-white p-1 text-xs font-semibold uppercase tracking-widest shadow-sm transition duration-150 ease-in-out hover:shadow-md hover:text-gray-900 focus:outline-none focus:ring-none focus:ring-offset-2 disabled:opacity-25"
         href="{{ route('socialite.auth', ['provider' => 'google']) }}">
-        <svg class="w-7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        <svg class="w-6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="-0.5 0 48 48" version="1.1">
             <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <g id="Color-" transform="translate(-401.000000, -860.000000)">
@@ -43,9 +43,9 @@
             </g>
         </svg>
     </a>
-    <a class="inline-flex items-center justify-center rounded-full border border-gray-100 text-white p-1 text-xs font-semibold uppercase tracking-widest shadow-sm transition duration-150 ease-in-out hover:shadow-md hover:text-gray-900 focus:outline-none focus:ring-none focus:ring-offset-2 disabled:opacity-25"
+    <a class="inline-flex items-center justify-center rounded-md border border-gray-200 text-white p-1 text-xs font-semibold uppercase tracking-widest shadow-sm transition duration-150 ease-in-out hover:shadow-md hover:text-gray-900 focus:outline-none focus:ring-none focus:ring-offset-2 disabled:opacity-25"
         href="{{ route('socialite.auth', ['provider' => 'facebook']) }}">
-        <svg class="w-8 text-blue-700" fill="currentColor" role="img" viewBox="0 0 24 24"
+        <svg class="w-6 text-blue-700" fill="currentColor" role="img" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
             <title>Facebook</title>
             <path

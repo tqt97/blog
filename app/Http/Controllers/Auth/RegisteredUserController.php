@@ -33,12 +33,18 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'github_id' => ['nullable', 'string', 'max:255', 'unique:'.User::class],
+            'google_id' => ['nullable', 'string', 'max:255', 'unique:'.User::class],
+            'facebook_id' => ['nullable', 'string', 'max:255', 'unique:'.User::class],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'github_id' => $request->github_id,
+            'google_id' => $request->google_id,
+            'facebook_id' => $request->facebook_id,
         ]);
 
         event(new Registered($user));
