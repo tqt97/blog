@@ -42,6 +42,7 @@
         <input type="hidden" name="github_id" value="{{ old('github_id') }}">
         <input type="hidden" name="google_id" value="{{ old('google_id') }}">
         <input type="hidden" name="facebook_id" value="{{ old('facebook_id') }}">
+        <input type="hidden" name="auth_type" value="{{ old('auth_type') }}">
 
         <div class="flex items-center justify-start mt-4">
 

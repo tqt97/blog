@@ -63,6 +63,15 @@ class SocialiteService
         $userByEmail = User::where('email', $socialUser->getEmail())->first();
 
         if ($userByEmail) {
+            // User already exists and auth_type is email
+            if ($userByEmail->auth_type === 'email') {
+                return [
+                    'status' => SocialEnums::STATUS_MAIL_EXIST,
+                    'redirect' => redirect()->route(SocialEnums::ROUTE_LOGIN)
+                        ->with(['error' => 'This email is registered with password. Please login with email and password.']),
+                ];
+            }
+
             return $this->handleExistingUser($provider, $socialUser, $userByEmail);
         }
 
@@ -72,6 +81,7 @@ class SocialiteService
                 'name' => $socialUser->getName(),
                 'email' => $socialUser->getEmail(),
                 "{$provider}_id" => $socialUser->getId(),
+                'auth_type' => $provider,
             ]),
         ];
     }
