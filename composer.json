@@ -13,7 +13,8 @@
         "laravel/framework": "^11.31",
         "laravel/socialite": "^5.17",
         "laravel/tinker": "^2.9",
-        "livewire/livewire": "^3.5"
+        "livewire/livewire": "^3.5",
+        "spatie/laravel-permission": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.5",
@@ -43,7 +44,8 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi",
-            "@php -r \"if(getenv('APP_ENV') === 'local'){ passthru('php artisan ide-helper:generate'); }\""
+            "@php -r \"if(getenv('APP_ENV') === 'local'){ passthru('php artisan ide-helper:generate'); }\"",
+            "@php artisan permissions:generate-all"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
